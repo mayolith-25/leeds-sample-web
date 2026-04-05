@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Pacifico&display=swap');
 
 :root {
   --bg-color: #F8FAFC;
@@ -34,6 +34,11 @@ p { color: var(--text-light); margin-bottom: 1.5rem; font-size: 1.125rem;}
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.highlight-font {
+  font-family: 'Pacifico', cursive;
+  font-weight: normal;
 }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
