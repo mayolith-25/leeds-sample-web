@@ -46,16 +46,28 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    // Expanding CTA Form logic
+    // Expanding pop-up Modal logic
     const showAssessmentFormBtn = document.getElementById('showAssessmentFormBtn');
-    const assessmentForm = document.getElementById('assessmentForm');
-    const ctaBtnWrapper = document.getElementById('ctaBtnWrapper');
+    const assessmentModal = document.getElementById('assessmentModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
 
-    if (showAssessmentFormBtn && assessmentForm && ctaBtnWrapper) {
+    if (showAssessmentFormBtn && assessmentModal) {
         showAssessmentFormBtn.addEventListener('click', function(e) {
-            e.preventDefault(); // Prevent jump to #contact
-            ctaBtnWrapper.classList.add('hidden');
-            assessmentForm.classList.add('visible');
+            e.preventDefault();
+            assessmentModal.classList.remove('hidden');
+        });
+
+        if (closeModalBtn) {
+            closeModalBtn.addEventListener('click', function() {
+                assessmentModal.classList.add('hidden');
+            });
+        }
+
+        // Close when clicking outside of the modal content
+        assessmentModal.addEventListener('click', function(e) {
+            if (e.target === assessmentModal) {
+                assessmentModal.classList.add('hidden');
+            }
         });
     }
 });

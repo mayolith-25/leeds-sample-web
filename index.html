@@ -148,36 +148,46 @@
                 <div class="cta-content">
                     <h2>Book an Initial Consultation Today</h2>
                     <p style="margin-bottom: 2rem; font-size: 1.125rem;">Unlock your child's true potential. Give them the extra attention, time, and patience to get the grades they deserve.</p>
-                    <div class="cta-button-wrapper" id="ctaBtnWrapper">
-                        <a href="#contact" id="showAssessmentFormBtn" class="btn btn-glass-primary">Book An Assessment</a>
-                    </div>
-                    
-                    <!-- Expanding Glassmorphism Form -->
-                    <form id="assessmentForm" class="glass-form">
-                        <div class="form-group">
-                            <input type="text" id="parentName" placeholder="Parent's Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" id="mobileNumber" placeholder="Mobile Number" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="emailAdd" placeholder="Email Address" required>
-                        </div>
-                        <div class="form-group">
-                            <select id="childYear" required>
-                                <option value="" disabled selected>Child's Year Group</option>
-                                <option value="ks1">Key Stage 1 (Years 1-2)</option>
-                                <option value="ks2">Key Stage 2 (Years 3-6)</option>
-                                <option value="ks3">Key Stage 3 (Years 7-9)</option>
-                                <option value="ks4">Key Stage 4 (Years 10-11)</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary submit-btn" style="border:none; cursor:pointer;">Submit Request</button>
-                    </form>
+                    <a href="#contact" id="showAssessmentFormBtn" class="btn btn-glass-primary">Book An Assessment</a>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Assessment Modal -->
+    <div id="assessmentModal" class="modal-overlay hidden">
+        <div class="modal-content teal-form-container">
+            <button class="modal-close" id="closeModalBtn" aria-label="Close modal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+            </button>
+            <div class="modal-header">
+                <h2>Book Your Assessment</h2>
+                <p>We'll get back to you shortly to confirm the details.</p>
+            </div>
+            <form id="assessmentForm" class="teal-form" onsubmit="event.preventDefault(); alert('Form submitted successfully!'); document.getElementById('assessmentModal').classList.add('hidden');">
+                <div class="form-group">
+                    <input type="text" id="parentName" placeholder="Parent's Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="mobileNumber" placeholder="Mobile Number" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="emailAdd" placeholder="Email Address" required>
+                </div>
+                <div class="form-group select-wrapper">
+                    <select id="childYear" required>
+                        <option value="" disabled selected>Child's Year Group</option>
+                        <option value="ks1">Key Stage 1 (Years 1-2)</option>
+                        <option value="ks2">Key Stage 2 (Years 3-6)</option>
+                        <option value="ks3">Key Stage 3 (Years 7-9)</option>
+                        <option value="ks4">Key Stage 4 (Years 10-11)</option>
+                    </select>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down select-icon"><path d="m6 9 6 6 6-6"/></svg>
+                </div>
+                <button type="submit" class="btn btn-glass-secondary submit-btn modal-submit">Request Consultation</button>
+            </form>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
