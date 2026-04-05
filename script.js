@@ -54,11 +54,24 @@ document.addEventListener('DOMContentLoaded', () => {
     if (showAssessmentFormBtn && assessmentModal) {
         showAssessmentFormBtn.addEventListener('click', function(e) {
             e.preventDefault();
-            assessmentModal.classList.remove('hidden');
+            const rect = this.getBoundingClientRect();
+            // Calculate center of clicked button
+            const clickX = rect.left + rect.width / 2;
+            const clickY = rect.top + rect.height / 2;
+            
+            // Pass the exact coordinates to CSS variables
+            assessmentModal.style.setProperty('--origin-x', `${clickX}px`);
+            assessmentModal.style.setProperty('--origin-y', `${clickY}px`);
+            
+            // Wait for next frame so CSS variables apply before clip-path expands
+            requestAnimationFrame(() => {
+                assessmentModal.classList.remove('hidden');
+            });
         });
 
         if (closeModalBtn) {
             closeModalBtn.addEventListener('click', function() {
+                // To animate out properly, just add hidden
                 assessmentModal.classList.add('hidden');
             });
         }
