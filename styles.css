@@ -138,7 +138,7 @@ header.scrolled {
   left: 50%;
   width: 140%;
   padding-bottom: 140%;
-  background-color: var(--card-bg);
+  background-color: var(--text-color);
   border-radius: 50%;
   z-index: -1;
   transform: translate(-50%, -50%) scale(0);
@@ -146,10 +146,10 @@ header.scrolled {
   transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
 }
 .btn-glass-secondary:hover, .btn-glass-secondary:active {
-  color: var(--primary-color);
-  border-color: var(--primary-color);
+  color: #fff;
+  border-color: transparent;
   transform: translateY(-2px);
-  box-shadow: 0 12px 20px rgba(15, 157, 138, 0.1);
+  box-shadow: 0 12px 20px rgba(30, 41, 59, 0.2);
 }
 .btn-glass-secondary:hover::before {
   transform: translate(-50%, -50%) scale(1);
