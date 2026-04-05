@@ -138,7 +138,7 @@ header.scrolled {
   left: 50%;
   width: 140%;
   padding-bottom: 140%;
-  background-color: var(--text-color);
+  background-color: var(--primary-color);
   border-radius: 50%;
   z-index: -1;
   transform: translate(-50%, -50%) scale(0);
@@ -149,7 +149,7 @@ header.scrolled {
   color: #fff;
   border-color: transparent;
   transform: translateY(-2px);
-  box-shadow: 0 12px 20px rgba(30, 41, 59, 0.2);
+  box-shadow: 0 12px 20px rgba(15, 157, 138, 0.2);
 }
 .btn-glass-secondary:hover::before {
   transform: translate(-50%, -50%) scale(1);
