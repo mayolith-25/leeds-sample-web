@@ -56,13 +56,16 @@ document.addEventListener('DOMContentLoaded', () => {
         showAssessmentFormBtn.addEventListener('click', function (e) {
             e.preventDefault();
 
-            // Get button position relative to viewport center
+            // Calculate how far the button is from viewport center
             const rect = this.getBoundingClientRect();
             const btnCenterX = rect.left + rect.width / 2;
             const btnCenterY = rect.top + rect.height / 2;
+            const offsetX = btnCenterX - window.innerWidth / 2;
+            const offsetY = btnCenterY - window.innerHeight / 2;
 
-            // Set transform-origin so the form scales out from the button's location
-            modalContent.style.transformOrigin = `${btnCenterX}px ${btnCenterY}px`;
+            // Set the starting translate so the form begins at the button
+            modalContent.style.setProperty('--offset-x', `${offsetX}px`);
+            modalContent.style.setProperty('--offset-y', `${offsetY}px`);
 
             assessmentModal.classList.remove('hidden');
         });

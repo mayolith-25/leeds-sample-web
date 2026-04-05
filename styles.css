@@ -666,15 +666,15 @@ header.scrolled {
   color: #fff;
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  transform: scale(0.3);
+  transform: translate(var(--offset-x, 0), var(--offset-y, 0)) scale(0.15);
   opacity: 0;
   transition:
     transform 0.55s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.35s ease;
+    opacity 0.3s ease;
 }
 
 .modal-overlay:not(.hidden) .modal-content {
-  transform: scale(1);
+  transform: translate(0, 0) scale(1);
   opacity: 1;
 }
 
