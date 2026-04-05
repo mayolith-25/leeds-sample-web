@@ -632,46 +632,85 @@ header.scrolled {
 }
 
 /* --- Modal Overlay --- */
+
+/* The background blur layer */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(15, 157, 138, 0.4);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  z-index: 9999;
+  z-index: 9998;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  opacity: 0;
   pointer-events: none;
-  transition: opacity 0.4s ease;
+  opacity: 0;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  background: transparent;
+  transition: opacity 0.5s ease, backdrop-filter 0.5s ease, background 0.5s ease;
 }
-
 .modal-overlay:not(.hidden) {
   opacity: 1;
   pointer-events: auto;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(0, 0, 0, 0.25);
 }
 
-.modal-content {
+/* The launcher — starts as the button, expands to fill screen */
+.modal-launcher {
+  position: fixed;
   background: linear-gradient(135deg, var(--primary-color), #0b8070);
+  border-radius: 50px;
+  z-index: 9999;
+  pointer-events: none;
+  top: var(--btn-top);
+  left: var(--btn-left);
+  width: var(--btn-width);
+  height: var(--btn-height);
+  transform-origin: center center;
+  transform: scale(1);
+  transition: none;
+}
+.modal-launcher.expanding {
+  border-radius: 0px;
+  transform: scale(var(--scale-x), var(--scale-y));
+  transition:
+    transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+    border-radius 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.modal-launcher.collapsing {
+  transform: scale(1);
+  border-radius: 50px;
+  transition:
+    transform 0.5s cubic-bezier(0.55, 0, 1, 0.45),
+    border-radius 0.5s cubic-bezier(0.55, 0, 1, 0.45);
+}
+
+/* The form card floats in on top of the fully-expanded launcher */
+.modal-content {
+  position: relative;
+  z-index: 10000;
+  background: linear-gradient(160deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-radius: 24px;
   padding: 3rem;
   max-width: 500px;
   width: 100%;
-  position: relative;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
   color: #fff;
-  transform: scale(0.9);
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+  opacity: 0;
+  transform: translateY(28px) scale(0.97);
+  transition: opacity 0.4s ease 0.35s, transform 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.35s;
 }
-
 .modal-overlay:not(.hidden) .modal-content {
-  transform: scale(1);
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .modal-close {
