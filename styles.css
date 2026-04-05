@@ -83,6 +83,39 @@ header.scrolled {
 .btn-secondary { background-color: var(--card-bg); color: var(--primary-color); border: 1px solid rgba(15, 157, 138, 0.2); box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05); }
 .btn-secondary:hover { transform: translateY(-2px); border-color: var(--primary-color); box-shadow: 0 12px 20px rgba(15, 157, 138, 0.1); }
 
+/* Glassy Buttons */
+.btn-glass-primary {
+  background: rgba(15, 157, 138, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--primary-color);
+  border: 1px solid rgba(15, 157, 138, 0.3);
+  box-shadow: 0 8px 15px rgba(15, 157, 138, 0.1);
+}
+.btn-glass-primary:hover, .btn-glass-primary:active {
+  background: linear-gradient(135deg, var(--primary-color), #0b8070);
+  color: #fff;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px rgba(15, 157, 138, 0.4);
+}
+
+.btn-glass-secondary {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: var(--primary-color);
+  border: 1px solid rgba(15, 157, 138, 0.3);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+}
+.btn-glass-secondary:hover, .btn-glass-secondary:active {
+  background-color: var(--card-bg);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px rgba(15, 157, 138, 0.1);
+}
+
 /* Mobile Menu Toggle */
 .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-color); cursor: pointer; }
 
