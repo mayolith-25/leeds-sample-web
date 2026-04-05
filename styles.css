@@ -640,7 +640,7 @@ header.scrolled {
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 9998;
+  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -665,7 +665,7 @@ header.scrolled {
   position: fixed;
   background: linear-gradient(135deg, var(--primary-color), #0b8070);
   border-radius: 50px;
-  z-index: 9999;
+  z-index: 9997;
   pointer-events: none;
   top: var(--btn-top);
   left: var(--btn-left);
@@ -694,10 +694,8 @@ header.scrolled {
 .modal-content {
   position: relative;
   z-index: 10000;
-  background: linear-gradient(160deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 100%);
+  background: linear-gradient(135deg, var(--primary-color), #0b8070);
   border: 1px solid rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   border-radius: 24px;
   padding: 3rem;
   max-width: 500px;
