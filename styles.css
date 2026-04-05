@@ -133,18 +133,18 @@ header.scrolled { padding: 0.6rem 0; box-shadow: 0 4px 20px rgba(15, 157, 138, 0
 .cta-content h2 { font-size: 3rem; margin-bottom: 1rem; }
 
 /* --- Footer --- */
-footer { background-color: var(--card-bg); padding: 5rem 0 2rem; border-top: 1px solid rgba(15, 157, 138, 0.1); }
+footer { background-color: #E2E8F0; padding: 5rem 0 2rem; border-top: 1px solid rgba(15, 157, 138, 0.15); }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 4rem; }
 .footer-brand p { margin-top: 1.5rem; }
 .footer-socials { display: flex; gap: 1rem; margin-top: 1.5rem; }
-.social-icon { width: 40px; height: 40px; border-radius: 50%; background: var(--bg-color); color: var(--text-color); display: flex; align-items: center; justify-content: center; transition: var(--transition); }
+.social-icon { width: 40px; height: 40px; border-radius: 50%; background: #ffffff; color: var(--text-color); display: flex; align-items: center; justify-content: center; transition: var(--transition); box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
 .social-icon:hover { background: var(--primary-color); color: #fff; transform: translateY(-3px); }
 .footer-links h4 { margin-bottom: 1.5rem; font-size: 1.1rem; }
 .footer-links ul { list-style: none; }
 .footer-links li { margin-bottom: 1rem; }
 .footer-links a { color: var(--text-light); text-decoration: none; transition: var(--transition); }
 .footer-links a:hover { color: var(--primary-color); }
-.footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid var(--bg-color); color: var(--text-light); }
+.footer-bottom { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(30, 41, 59, 0.1); color: var(--text-light); }
 
 /* --- Responsive --- */
 @media (max-width: 1024px) {
