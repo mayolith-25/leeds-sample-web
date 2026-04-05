@@ -39,6 +39,8 @@ p { color: var(--text-light); margin-bottom: 1.5rem; font-size: 1.125rem;}
 .highlight-font {
   font-family: 'Pacifico', cursive;
   font-weight: normal;
+  font-size: 1.15em;
+  padding: 0 0.1em;
 }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
