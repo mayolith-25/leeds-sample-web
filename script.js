@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile menu toggle
     const mobileBtn = document.getElementById('mobileBtn');
     const navLinks = document.getElementById('navLinks');
-    
-    if(mobileBtn && navLinks) {
+
+    if (mobileBtn && navLinks) {
         mobileBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
         });
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Scroll header effect
     const header = document.getElementById('header');
-    
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             header.classList.add('scrolled');
@@ -25,23 +25,23 @@ document.addEventListener('DOMContentLoaded', () => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const targetId = this.getAttribute('href');
-            
-            if(targetId === '#') return;
-            
+
+            if (targetId === '#') return;
+
             const targetElement = document.querySelector(targetId);
-            
+
             if (targetElement) {
-                if(navLinks.classList.contains('active')) {
+                if (navLinks.classList.contains('active')) {
                     navLinks.classList.remove('active');
                 }
-                
+
                 const headerOffset = 80;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-  
+
                 window.scrollTo({
-                     top: offsetPosition,
-                     behavior: "smooth"
+                    top: offsetPosition,
+                    behavior: "smooth"
                 });
             }
         });
@@ -52,32 +52,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeModalBtn = document.getElementById('closeModalBtn');
 
     if (showAssessmentFormBtn && assessmentModal) {
-        showAssessmentFormBtn.addEventListener('click', function(e) {
+        showAssessmentFormBtn.addEventListener('click', function (e) {
             e.preventDefault();
-            const rect = this.getBoundingClientRect();
-            // Calculate center of clicked button
-            const clickX = rect.left + rect.width / 2;
-            const clickY = rect.top + rect.height / 2;
-            
-            // Pass the exact coordinates to CSS variables
-            assessmentModal.style.setProperty('--origin-x', `${clickX}px`);
-            assessmentModal.style.setProperty('--origin-y', `${clickY}px`);
-            
-            // Wait for next frame so CSS variables apply before clip-path expands
-            requestAnimationFrame(() => {
-                assessmentModal.classList.remove('hidden');
-            });
+            assessmentModal.classList.remove('hidden');
         });
 
         if (closeModalBtn) {
-            closeModalBtn.addEventListener('click', function() {
-                // To animate out properly, just add hidden
+            closeModalBtn.addEventListener('click', function () {
                 assessmentModal.classList.add('hidden');
             });
         }
 
         // Close when clicking outside of the modal content
-        assessmentModal.addEventListener('click', function(e) {
+        assessmentModal.addEventListener('click', function (e) {
             if (e.target === assessmentModal) {
                 assessmentModal.classList.add('hidden');
             }
