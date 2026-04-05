@@ -50,10 +50,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const showAssessmentFormBtn = document.getElementById('showAssessmentFormBtn');
     const assessmentModal = document.getElementById('assessmentModal');
     const closeModalBtn = document.getElementById('closeModalBtn');
+    const modalContent = assessmentModal ? assessmentModal.querySelector('.modal-content') : null;
 
-    if (showAssessmentFormBtn && assessmentModal) {
+    if (showAssessmentFormBtn && assessmentModal && modalContent) {
         showAssessmentFormBtn.addEventListener('click', function (e) {
             e.preventDefault();
+
+            // Get button position relative to viewport center
+            const rect = this.getBoundingClientRect();
+            const btnCenterX = rect.left + rect.width / 2;
+            const btnCenterY = rect.top + rect.height / 2;
+
+            // Set transform-origin so the form scales out from the button's location
+            modalContent.style.transformOrigin = `${btnCenterX}px ${btnCenterY}px`;
+
             assessmentModal.classList.remove('hidden');
         });
 
