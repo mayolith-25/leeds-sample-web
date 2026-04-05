@@ -46,4 +46,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    // Expanding CTA Form logic
+    const showAssessmentFormBtn = document.getElementById('showAssessmentFormBtn');
+    const assessmentForm = document.getElementById('assessmentForm');
+    const ctaBtnWrapper = document.getElementById('ctaBtnWrapper');
+
+    if (showAssessmentFormBtn && assessmentForm && ctaBtnWrapper) {
+        showAssessmentFormBtn.addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent jump to #contact
+            ctaBtnWrapper.classList.add('hidden');
+            assessmentForm.classList.add('visible');
+        });
+    }
 });

@@ -148,7 +148,32 @@
                 <div class="cta-content">
                     <h2>Book an Initial Consultation Today</h2>
                     <p style="margin-bottom: 2rem; font-size: 1.125rem;">Unlock your child's true potential. Give them the extra attention, time, and patience to get the grades they deserve.</p>
-                    <a href="#contact" class="btn btn-glass-primary">Book An Assessment</a>
+                    <div class="cta-button-wrapper" id="ctaBtnWrapper">
+                        <a href="#contact" id="showAssessmentFormBtn" class="btn btn-glass-primary">Book An Assessment</a>
+                    </div>
+                    
+                    <!-- Expanding Glassmorphism Form -->
+                    <form id="assessmentForm" class="glass-form">
+                        <div class="form-group">
+                            <input type="text" id="parentName" placeholder="Parent's Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="mobileNumber" placeholder="Mobile Number" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="emailAdd" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <select id="childYear" required>
+                                <option value="" disabled selected>Child's Year Group</option>
+                                <option value="ks1">Key Stage 1 (Years 1-2)</option>
+                                <option value="ks2">Key Stage 2 (Years 3-6)</option>
+                                <option value="ks3">Key Stage 3 (Years 7-9)</option>
+                                <option value="ks4">Key Stage 4 (Years 10-11)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit-btn" style="border:none; cursor:pointer;">Submit Request</button>
+                    </form>
                 </div>
             </div>
         </div>
