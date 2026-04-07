@@ -560,7 +560,7 @@ header.scrolled {
 }
 
 .stats .text-light {
-  color: rgba(255, 255, 255, 0.8);
+  color: #D1FAE5;
 }
 
 .stats-grid {
@@ -591,7 +591,7 @@ header.scrolled {
 .stat-card.visible:hover {
   transform: translateY(-10px);
   background: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(20, 184, 166, 0.2);
   border-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -599,12 +599,12 @@ header.scrolled {
   width: 70px;
   height: 70px;
   margin: 0 auto 1.5rem;
-  background: rgba(255, 255, 255, 0.15);
+  background: #14B8A6;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent-color);
+  color: #FFFFFF;
   transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -620,7 +620,7 @@ header.scrolled {
 .stat-item h3 {
   font-size: 3.5rem;
   margin-bottom: 0.5rem;
-  color: var(--accent-color);
+  color: #FFFFFF;
   display: flex;
   align-items: center;
   justify-content: center;
