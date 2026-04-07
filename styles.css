@@ -441,7 +441,7 @@ header.scrolled {
   background-color: var(--card-bg);
   padding: 3rem 2rem;
   border-radius: var(--border-radius);
-  box-shadow: var(--card-shadow);
+  box-shadow: 0 8px 20px rgba(15, 157, 138, 0.22), 0 20px 45px rgba(15, 100, 90, 0.18);
   transition: var(--transition);
   border: 1px solid rgba(255, 255, 255, 0.8);
   text-align: center;
@@ -464,7 +464,7 @@ header.scrolled {
 
 .feature-card:hover {
   transform: translateY(-10px);
-  box-shadow: var(--card-hover-shadow);
+  box-shadow: 0 16px 35px rgba(15, 157, 138, 0.38), 0 35px 65px rgba(10, 80, 70, 0.28);
 }
 
 .feature-card:hover::before {
