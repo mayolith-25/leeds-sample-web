@@ -962,6 +962,30 @@ footer {
   color: var(--text-light);
 }
 
+/* --- Reveal Animations --- */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal-up.is-visible,
+.reveal-scale.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.reveal-up[style*="--delay"],
+.reveal-scale[style*="--delay"] {
+  transition-delay: var(--delay);
+}
+
 /* --- Responsive --- */
 @media (max-width: 1024px) {
   .hero-container {
