@@ -149,6 +149,10 @@ header.scrolled {
   color: var(--primary-color);
 }
 
+.nav-links a.btn-primary:hover {
+  color: #fff;
+}
+
 /* Buttons */
 .btn {
   display: inline-block;
