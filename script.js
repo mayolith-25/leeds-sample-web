@@ -82,4 +82,44 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Number Counting Animation for Stats
+    const counters = document.querySelectorAll('.counter');
+    const statsSection = document.querySelector('.stats');
+
+    if (counters.length > 0 && statsSection) {
+        let hasCounted = false;
+
+        const countUp = () => {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const duration = 2000; // 2 seconds
+                const increment = target / (duration / 16); // 60fps
+
+                let currentCount = 0;
+                
+                const updateCounter = () => {
+                    currentCount += increment;
+                    if (currentCount < target) {
+                        counter.innerText = Math.ceil(currentCount);
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.innerText = target;
+                    }
+                };
+                
+                updateCounter();
+            });
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            const entry = entries[0];
+            if (entry.isIntersecting && !hasCounted) {
+                hasCounted = true;
+                countUp();
+            }
+        }, { threshold: 0.5 });
+
+        observer.observe(statsSection);
+    }
 });

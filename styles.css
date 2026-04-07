@@ -490,10 +490,60 @@ header.scrolled {
 
 /* --- Stats Section --- */
 .stats {
-  padding: 5rem 0;
+  padding: 8rem 0;
   background: linear-gradient(135deg, var(--primary-color), #0b8070);
   color: #fff;
   position: relative;
+  overflow: hidden;
+}
+
+.stats-bg-shapes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.stats-bg-shapes::before,
+.stats-bg-shapes::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  opacity: 0.6;
+  animation: float-slow 15s infinite ease-in-out alternate;
+}
+
+.stats-bg-shapes::before {
+  width: 400px;
+  height: 400px;
+  background: rgba(62, 242, 194, 0.2);
+  top: -100px;
+  right: -100px;
+}
+
+.stats-bg-shapes::after {
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  bottom: -50px;
+  left: -50px;
+  animation-delay: -5s;
+}
+
+@keyframes float-slow {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, 20px) scale(1.05); }
+  100% { transform: translate(20px, -30px) scale(0.95); }
+}
+
+.stats .container {
+  position: relative;
+  z-index: 1;
 }
 
 .stats h2,
@@ -508,14 +558,57 @@ header.scrolled {
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2rem;
+  gap: 2.5rem;
   text-align: center;
 }
 
+.stat-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--border-radius);
+  padding: 3rem 1.5rem;
+  transition: var(--transition);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.stat-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-color);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.stat-icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.stat-card:hover .stat-icon {
+  transform: scale(1.15) rotate(5deg);
+}
+
 .stat-item h3 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 0.5rem;
   color: var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* --- Testimonials --- */
