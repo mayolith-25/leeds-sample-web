@@ -117,6 +117,14 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting && !hasCounted) {
                 hasCounted = true;
                 countUp();
+                
+                // Add visible class to cards with a staggered delay
+                const statCards = document.querySelectorAll('.stat-card');
+                statCards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.classList.add('visible');
+                    }, index * 150);
+                });
             }
         }, { threshold: 0.5 });
 
