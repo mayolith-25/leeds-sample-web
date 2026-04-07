@@ -533,7 +533,7 @@ header.scrolled {
   background-color: var(--card-bg);
   padding: 3rem;
   border-radius: var(--border-radius);
-  box-shadow: var(--card-shadow);
+  box-shadow: 0 6px 18px rgba(15, 157, 138, 0.1), 0 14px 35px rgba(15, 100, 90, 0.09);
   border: 1px solid rgba(255, 255, 255, 0.6);
   position: relative;
 }
