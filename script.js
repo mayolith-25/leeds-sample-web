@@ -145,4 +145,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
         observer.observe(statsSection);
     }
+
+    // ─── Center Spotlight Auto-Hover ─────────────────────────────────────────
+    // Tracks cards/content elements. On scroll, whichever card's center lands
+    // within a 40px-tall window at the viewport midpoint gets .auto-hover.
+    // Only ONE element can be active at a time; if none hit the window, all clear.
+    const spotlightCards = document.querySelectorAll(
+        '.feature-card, .stat-card, .testimonial-card, .cta-card'
+    );
+
+    const SPOTLIGHT_HALF = 20; // half of 40px window
+
+    const updateSpotlight = () => {
+        const centerY = window.innerHeight / 2;
+        let activeCard = null;
+        let closestDist = Infinity;
+
+        spotlightCards.forEach(card => {
+            const rect = card.getBoundingClientRect();
+            const cardCenterY = rect.top + rect.height / 2;
+            const dist = Math.abs(cardCenterY - centerY);
+
+            // Only consider cards within the 40px window
+            if (dist <= SPOTLIGHT_HALF && dist < closestDist) {
+                closestDist = dist;
+                activeCard = card;
+            }
+        });
+
+        spotlightCards.forEach(card => {
+            if (card === activeCard) {
+                card.classList.add('auto-hover');
+            } else {
+                card.classList.remove('auto-hover');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', updateSpotlight, { passive: true });
+    // Run once on load in case a card is already centered
+    updateSpotlight();
 });
