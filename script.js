@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '.feature-card, .stat-card, .testimonial-card, .cta-card'
     );
 
-    const SPOTLIGHT_HALF = 20; // half of 40px window
+    const SPOTLIGHT_HALF = 150; // 300px total window — reliably captures one card at a time
 
     const updateSpotlight = () => {
         const centerY = window.innerHeight / 2;
