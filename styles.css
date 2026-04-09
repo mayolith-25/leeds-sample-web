@@ -1037,6 +1037,42 @@ footer {
   box-shadow: 0 30px 60px rgba(15, 157, 138, 0.22);
 }
 
+/* Buttons */
+.btn-primary.auto-hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px rgba(15, 157, 138, 0.4);
+}
+
+.btn-secondary.auto-hover {
+  transform: translateY(-2px);
+  border-color: var(--primary-color);
+  box-shadow: 0 12px 20px rgba(15, 157, 138, 0.1);
+}
+
+.btn-glass-primary.auto-hover {
+  color: #fff;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 24px rgba(15, 157, 138, 0.3);
+}
+
+.btn-glass-primary.auto-hover::before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
+.btn-glass-secondary.auto-hover {
+  color: #fff;
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px rgba(15, 157, 138, 0.2);
+}
+
+.btn-glass-secondary.auto-hover::before {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+}
+
 /* --- Responsive --- */
 @media (max-width: 1024px) {
   .hero-container {

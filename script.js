@@ -151,7 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // within a 40px-tall window at the viewport midpoint gets .auto-hover.
     // Only ONE element can be active at a time; if none hit the window, all clear.
     const spotlightCards = document.querySelectorAll(
-        '.feature-card, .stat-card, .testimonial-card, .cta-card'
+        '.feature-card, .stat-card, .testimonial-card, .cta-card, .btn'
     );
 
     const SPOTLIGHT_HALF = 150; // 300px total window — reliably captures one card at a time
